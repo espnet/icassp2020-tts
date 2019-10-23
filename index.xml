@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ICASSP 2020 ESPNET-TTS SAMPLES</title>
-    <link>http://espnet.github.io/icassp2020-tts/</link>
+    <link>https://espnet.github.io/icassp2020-tts/</link>
     <description>Recent content on ICASSP 2020 ESPNET-TTS SAMPLES</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 21 Oct 2019 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="http://espnet.github.io/icassp2020-tts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://espnet.github.io/icassp2020-tts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://espnet.github.io/icassp2020-tts/</link>
+      <link>https://espnet.github.io/icassp2020-tts/</link>
       <pubDate>Mon, 21 Oct 2019 00:00:00 +0900</pubDate>
       
-      <guid>http://espnet.github.io/icassp2020-tts/</guid>
+      <guid>https://espnet.github.io/icassp2020-tts/</guid>
       <description>ICASSP 2020 ESPnet-TTS Audio Samples Abstract This paper introduces a new end-to-end text-to-speech (E2E-TTS) toolkit named ESPnet-TTS, which is an extension of the open-source speech processing toolkit ESPnet. The toolkit supports state-of-the-art E2E-TTS models, including Tacotron 2, Transformer TTS, and FastSpeech, and also provides recipes inspired by the Kaldi automatic speech recognition (ASR) toolkit. The recipes are based on the design unified with the ESPnet ASR recipe, providing high reproducibility.</description>
     </item>
     
