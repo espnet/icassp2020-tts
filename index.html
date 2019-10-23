@@ -1,624 +1,75 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+	<meta name="generator" content="Hugo 0.59.0" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="">
+
+		<title>ICASSP 2020 ESPNET-TTS SAMPLES</title>
+
+		
+  		<link rel="stylesheet" href="/icassp2020-tts/css/style.css">
+		<link rel="stylesheet" href="/icassp2020-tts/css/fonts.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/icassp2020-tts/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/icassp2020-tts/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/icassp2020-tts/images/apple-touch-icon.png">
+
+		
+		<link href="/icassp2020-tts/index.xml" rel="alternate" type="application/rss+xml" title="ICASSP 2020 ESPNET-TTS SAMPLES" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/icassp2020-tts/">
+					<h2 class="nav-title">ICASSP 2020 ESPNET-TTS SAMPLES</h2>
+				</a>
+				<ul>
     
-    <title> - ICASSP 2020 ESPNET-TTS SAMPLES</title>
     
-    <meta name="description" content="ICASSP 2020 ESPnet-TTS Audio Samples Abstract This paper introduces a new end-to-end text-to-speech (E2E-TTS) toolkit named ESPnet-TTS, which is an extension of the open-source speech processing toolkit ESPnet. The toolkit supports state-of-the-art E2E-TTS models, including Tacotron 2, Transformer TTS, and FastSpeech, and also provides recipes inspired by the Kaldi automatic speech recognition (ASR) toolkit. The recipes are based on the design unified with the ESPnet ASR recipe, providing high reproducibility.">
-    <meta name="author" content="">
-    
-    <link href="https://espnet.github.io/icassp2020-tts/an-old-hope.min.css" rel="stylesheet">
-    <link href="https://espnet.github.io/icassp2020-tts/style.css" rel="stylesheet">
-    
-    <link rel="apple-touch-icon" href="https://espnet.github.io/icassp2020-tts/apple-touch-icon.png">
-    <link rel="icon" href="https://espnet.github.io/icassp2020-tts/favicon.ico">
-    
-    <meta name="generator" content="Hugo 0.59.0" />
-    
-    <link rel="alternate" type="application/atom+xml" href="https://espnet.github.io/icassp2020-tts/index.xml" title="ICASSP 2020 ESPNET-TTS SAMPLES">
-    
-    
-    
-    <script>
-      function setTheme() {
-        const time = new Date();
-
-        const prev = localStorage.getItem('date');
-        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
-
-        const now = time.getTime();
-        let sunrise;
-        let sunset;
-
-        function setBodyClass() {
-          if (now > sunrise && now < sunset) return;
-          document.body.classList.add('dark');
-        }
-
-        if (date !== prev) {
-          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
-            .then(res => res.json())
-            .then(data => {
-              sunrise = data.sunrise.split(':').map(Number);
-              sunset = data.sunset.split(':').map(Number);
-            })
-            .catch(() => {
-              sunrise = [7, 0];
-              sunset = [19, 0];
-            })
-            .finally(() => {
-              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
-              sunset = time.setHours(sunset[0], sunset[1], 0);
-              setBodyClass();
-              localStorage.setItem('sunrise', sunrise);
-              localStorage.setItem('sunset', sunset);
-            });
-          localStorage.setItem('date', date);
-        } else {
-          sunrise = Number(localStorage.getItem('sunrise'));
-          sunset = Number(localStorage.getItem('sunset'));
-          setBodyClass();
-        }
-      }
-    </script>
-  </head>
-  <body class="single">
-    <script>
-      setTheme();
-    </script>
-    <header class="header">
-      <nav class="nav">
-        
-        <p class="logo"><a href="https://espnet.github.io/icassp2020-tts/">ICASSP 2020 ESPNET-TTS SAMPLES</a></p>
-        
-        
-      </nav>
-    </header>
-    <main class="main">
-
-
-<article class="post-single">
-  <header class="post-header">
-    <h1 class="post-title"></h1>
-    <div class="post-meta">October 21, 2019</div>
-  </header>
-  <div class="post-content">
-
-<h1 id="icassp-2020-espnet-tts-audio-samples">ICASSP 2020 ESPnet-TTS Audio Samples</h1>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>This paper introduces a new end-to-end text-to-speech (E2E-TTS) toolkit named ESPnet-TTS, which is an extension of the open-source speech processing toolkit ESPnet. The toolkit supports state-of-the-art E2E-TTS models, including Tacotron 2, Transformer TTS, and FastSpeech, and also provides recipes inspired by the Kaldi automatic speech recognition (ASR) toolkit. The recipes are based on the design unified with the ESPnet ASR recipe, providing high reproducibility. The toolkit also provides pre-trained models and samples of all of the recipes so that users can use it as a baseline. Furthermore, the unified design enables the integration of ASR functions with TTS, e.g., ASR-based objective evaluation and semi-supervised learning with both ASR and TTS models. This paper describes the design of the toolkit and experimental evaluation in comparison with other toolkits. The experimental results show that our best model outperforms other toolkits, resulting in a mean opinion score (MOS) of 4.25 on the LJSpeech dataset. The toolkit is available on <a href="https://github.com/espnet/espnet">GitHub</a>.</p>
-
-<h2 id="audio-samples-english">Audio samples (English)</h2>
-
-<p>These samples are used in the subjective evaluation.<br />
-You can find all of the samples in <a href="https://drive.google.com/open?id=1prLlnRmZxN6VRG34KuERaa3u0GySxx7r">our Google Drive</a>.</p>
-
-<h3 id="model-list">Model list</h3>
-
-<ul>
-<li><strong>Groundtruth</strong>: Natural speech</li>
-<li><strong>Tacotron2.v2</strong>: Tacotron 2 using Forward attentin with a transition agent</li>
-<li><strong>Tacotron2.v3</strong>: Tacotron 2 with a guided attention loss</li>
-<li><strong>Transformer.v1</strong>: Transformer with a guided attention loss</li>
-<li><strong>Transformer.v3</strong>: Transformer with a guided attention loss and phoneme inputs</li>
-<li><strong>FastSpeech.v2</strong>: FastSpeech trained with Transformer.v1 as a teacher</li>
-<li><strong>FastSpeech.v3</strong>: FastSpeech trained with Transformer.v3 as a teacher</li>
-<li><strong>FastSpeech.v4</strong>: FastSpeech trained with Transformer.v3 + knowledge distillation (EXPERIMENTAL)</li>
-<li><strong>Merlin</strong>: Conventional statistical speech synthesis system based on <a href="https://github.com/CSTR-Edinburgh/merlin">Merlin</a> + <a href="https://github.com/mmorise/World">WORLD</a></li>
-<li><strong>Mozilla</strong>: Pre-trained Tacotron 2 and WaveRNN provided by <a href="https://github.com/mozilla/TTS">mozilla/TTS</a></li>
-<li><strong>Merlin</strong>: Pre-trained Tacotron 2 and WaveGlow provided by <a href="https://github.com/NVIDIA/tacotron2">NVIDIA/tacotron2</a></li>
 </ul>
+			</div>
+		</nav>
 
-<h3 id="the-commission-also-recommends"><code>The Commission also recommends</code></h3>
+        
 
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
+<main>
+	
 
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Tacotron2.v2</td>
-<td>Tacotron2.v3</td>
-</tr>
 
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/raw/LJ050-0030.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v2/LJ050-0030.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v3/LJ050-0030.wav"/></audio></td>
-</tr>
+	<div class="catalogue">
+		
+			<a href="https://espnet.github.io/icassp2020-tts/" class="catalogue-item">
+    <div>
+        <time datetime="2019-10-21 00:00:00 &#43;0900 JST" class="catalogue-time">October 21, 2019</time>
+        <h1 class="catalogue-title"></h1>
+        <div class="catalogue-line"></div>
 
-<tr>
-<td>Transformer.v1</td>
-<td>Transformer.v3</td>
-<td></td>
-</tr>
+        <p>
+            ICASSP 2020 ESPnet-TTS Audio Samples Abstract This paper introduces a new end-to-end text-to-speech (E2E-TTS) toolkit named ESPnet-TTS, which is an extension of the open-source speech processing toolkit ESPnet. The toolkit supports state-of-the-art E2E-TTS models, including Tacotron 2, Transformer TTS, and FastSpeech, and also provides recipes inspired by the Kaldi automatic speech recognition (ASR) toolkit. The recipes are based on the design unified with the ESPnet ASR recipe, providing high reproducibility.
+        </p>
+    </div>
+</a>
 
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v1/LJ050-0030.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v3/LJ050-0030.wav"/></audio></td>
-<td></td>
-</tr>
+		
+	</div>
 
-<tr>
-<td>FastSpeech.v2</td>
-<td>FastSpeech.v3</td>
-<td>FastSpeech.v4</td>
-</tr>
+	<div class="pagination">
+		
+		
 
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v2/LJ050-0030.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v3/LJ050-0030.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v4/LJ050-0030.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Merlin</td>
-<td>Mozilla</td>
-<td>NVIDIA</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/merlin/LJ050-0030.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/mozilla/LJ050-0030.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/nvidia/LJ050-0030.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="as-a-result-of-these-studies-the-planning-document-submitted-by-the-secretary-of-the-treasury-to-the-bureau-of-the-budget-on-august-thirty-one"><code>As a result of these studies, the planning document submitted by the Secretary of the Treasury to the Bureau of the Budget on August thirty-one,</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Tacotron2.v2</td>
-<td>Tacotron2.v3</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/raw/LJ050-0050.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v2/LJ050-0050.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v3/LJ050-0050.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Transformer.v1</td>
-<td>Transformer.v3</td>
-<td></td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v1/LJ050-0050.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v3/LJ050-0050.wav"/></audio></td>
-<td></td>
-</tr>
-
-<tr>
-<td>FastSpeech.v2</td>
-<td>FastSpeech.v3</td>
-<td>FastSpeech.v4</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v2/LJ050-0050.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v3/LJ050-0050.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v4/LJ050-0050.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Merlin</td>
-<td>Mozilla</td>
-<td>NVIDIA</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/merlin/LJ050-0050.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/mozilla/LJ050-0050.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/nvidia/LJ050-0050.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="the-fbi-now-transmits-information-on-all-defectors-a-category-which-would-of-course-have-included-oswald"><code>The FBI now transmits information on all defectors, a category which would, of course, have included Oswald.</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Tacotron2.v2</td>
-<td>Tacotron2.v3</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/raw/LJ050-0070.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v2/LJ050-0070.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v3/LJ050-0070.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Transformer.v1</td>
-<td>Transformer.v3</td>
-<td></td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v1/LJ050-0070.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v3/LJ050-0070.wav"/></audio></td>
-<td></td>
-</tr>
-
-<tr>
-<td>FastSpeech.v2</td>
-<td>FastSpeech.v3</td>
-<td>FastSpeech.v4</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v2/LJ050-0070.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v3/LJ050-0070.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v4/LJ050-0070.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Merlin</td>
-<td>Mozilla</td>
-<td>NVIDIA</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/merlin/LJ050-0070.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/mozilla/LJ050-0070.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/nvidia/LJ050-0070.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="they-seem-unduly-restrictive-in-continuing-to-require-some-manifestation-of-animus-against-a-government-official"><code>they seem unduly restrictive in continuing to require some manifestation of animus against a Government official.</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Tacotron2.v2</td>
-<td>Tacotron2.v3</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/raw/LJ050-0090.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v2/LJ050-0090.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v3/LJ050-0090.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Transformer.v1</td>
-<td>Transformer.v3</td>
-<td></td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v1/LJ050-0090.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v3/LJ050-0090.wav"/></audio></td>
-<td></td>
-</tr>
-
-<tr>
-<td>FastSpeech.v2</td>
-<td>FastSpeech.v3</td>
-<td>FastSpeech.v4</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v2/LJ050-0090.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v3/LJ050-0090.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v4/LJ050-0090.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Merlin</td>
-<td>Mozilla</td>
-<td>NVIDIA</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/merlin/LJ050-0090.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/mozilla/LJ050-0090.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/nvidia/LJ050-0090.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="and-each-agency-given-clear-understanding-of-the-assistance-which-the-secret-service-expects"><code>and each agency given clear understanding of the assistance which the Secret Service expects.</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Tacotron2.v2</td>
-<td>Tacotron2.v3</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/raw/LJ050-0110.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v2/LJ050-0110.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/tacotron2.v3/LJ050-0110.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Transformer.v1</td>
-<td>Transformer.v3</td>
-<td></td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v1/LJ050-0110.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/transformer.v3/LJ050-0110.wav"/></audio></td>
-<td></td>
-</tr>
-
-<tr>
-<td>FastSpeech.v2</td>
-<td>FastSpeech.v3</td>
-<td>FastSpeech.v4</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v2/LJ050-0110.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v3/LJ050-0110.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/fastspeech.v4/LJ050-0110.wav"/></audio></td>
-</tr>
-
-<tr>
-<td>Merlin</td>
-<td>Mozilla</td>
-<td>NVIDIA</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/ljspeech/merlin/LJ050-0110.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/mozilla/LJ050-0110.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/ljspeech/nvidia/LJ050-0110.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="audio-samples-mandarin">Audio samples (Mandarin)</h2>
-
-<p>Mandarin samples are created by <a href="https://github.com/espnet/espnet/tree/master/egs/csmsc/tts1"><code>egs/csmsc/tts1</code></a> recipe.<br />
-You can find more samples in <a href="https://drive.google.com/open?id=1BmrdQSIatJMZsNMNL64VYARjQXkRrQ1X">our Google Drive</a>.</p>
-
-<h3 id="昨日-这名-伤者-与医生全部被警方依法刑事拘留"><code>昨日，这名“伤者”与医生全部被警方依法刑事拘留。</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Transformer.v1</td>
-<td>FastSpeech.v3</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/csmsc/raw/009901.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/csmsc/transformer.v1/009901.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/csmsc/fastspeech.v3/009901.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="钱伟长想到上海来办学校是经过深思熟虑的"><code>钱伟长想到上海来办学校是经过深思熟虑的。</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Transformer.v1</td>
-<td>FastSpeech.v3</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/csmsc/raw/009902.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/csmsc/transformer.v1/009902.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/csmsc/fastspeech.v3/009902.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="她见我一进门就骂-吃饭时也骂-骂得我抬不起头"><code>她见我一进门就骂，吃饭时也骂，骂得我抬不起头。</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Transformer.v1</td>
-<td>FastSpeech.v3</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/csmsc/raw/009903.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/csmsc/transformer.v1/009903.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/csmsc/fastspeech.v3/009903.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="audio-samples-japanese">Audio samples (Japanese)</h2>
-
-<p>Japanese samples are created by <a href="https://github.com/espnet/espnet/tree/master/egs/jsut/tts1"><code>egs/jsut/tts1</code></a> recipe.<br />
-You can find more samples in <a href="https://drive.google.com/open?id=1fEgS4-K4dtgVxwI4Pr7uOA1h4PE-zN7f">our Google Drive</a>.</p>
-
-<h3 id="水をマレーシアから買わなくてはならないのです"><code>水をマレーシアから買わなくてはならないのです。</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Tacotron2</td>
-<td>Transformer</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/jsut/raw/BASIC5000_0001.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/jsut/tacotron2/BASIC5000_0001.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/jsut/transformer/BASIC5000_0001.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="木曜日-停戦会談は-何の進展もないまま終了しました"><code>木曜日、停戦会談は、何の進展もないまま終了しました。</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Tacotron2</td>
-<td>Transformer</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/jsut/raw/BASIC5000_0002.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/jsut/tacotron2/BASIC5000_0002.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/jsut/transformer/BASIC5000_0002.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="上院議員は私がデータをゆがめたと告発した"><code>上院議員は私がデータをゆがめたと告発した。</code></h3>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Groundtruth</td>
-<td>Tacotron2</td>
-<td>Transformer</td>
-</tr>
-
-<tr>
-<td><audio controls="" ><source src="wav/jsut/raw/BASIC5000_0003.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/jsut/tacotron2/BASIC5000_0003.wav"/></audio></td>
-<td><audio controls="" ><source src="wav/jsut/transformer/BASIC5000_0003.wav"/></audio></td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="citation">Citation</h2>
-
-<pre><code>@inproceedings{hayashi2019espnet,
-  title={ESPnet-TTS: Unified, Reproducible, and Integratable Open Source End-to-End Text-to-Speech Toolkit},
-  author={Hayashi, Tomoki and Yamamoto, Ryuichi and Inoue, Katsuki and Yoshimura, Takenori and Watanabe, Shinji and Toda, Tomoki and Takeda, Kazuya and Zhang, Yu, and Tan, Xu},
-  booktitle={Submitted to ICASSP 2020},
-  year={2019}
-}
-</code></pre>
-</div>
-  
-  
-  
-  
-  
-</article>
-
+		<span>1</span>
+	</div>
 </main>
-<footer class="footer">
-  <span>&copy; 2019 <a href="https://espnet.github.io/icassp2020-tts/">ICASSP 2020 ESPNET-TTS SAMPLES</a></span>
-  <span>&middot;</span>
-  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
-  <span>&middot;</span>
-  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
-</footer>
-<script src="https://espnet.github.io/icassp2020-tts/highlight.min.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-</body>
-</html>
 
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-10-23 21:41:46.427838 &#43;0900 JST m=&#43;0.044910232">2019</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>
